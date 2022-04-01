@@ -11,23 +11,23 @@ namespace TwoToOne
             int[] firstArray = new int[] { 1, 3, 1 };
             int[] secondArray = new int[] { 1, 2, 2 };
 
-            List<int> onlyOne = new List<int>();
+            List<int> onlyUniqueValue = new List<int>();
 
-            AddToList(firstArray, onlyOne);
-            AddToList(secondArray, onlyOne);
+            AddToList(firstArray, onlyUniqueValue);
+            AddToList(secondArray, onlyUniqueValue);
 
             Console.WriteLine($"имеются два массива чисел:\n{string.Join(", ", firstArray)}\n{string.Join(", ", secondArray)}");
-            Console.WriteLine($"\nобъединенная коллекция с уникальными значениями:\n{string.Join(", ", onlyOne)}");
+            Console.WriteLine($"\nобъединенная коллекция с уникальными значениями:\n{string.Join(", ", onlyUniqueValue)}");
         }
 
-        static void AddToList(int[] array, List<int> onlyOne)
+        static void AddToList(int[] array, List<int> onlyUniqueValue)
         {
             for (int i = 0; i < array.Length; i++)
             {
                 int value = array[i];
 
-                if (onlyOne.Contains(value) == false)
-                    onlyOne.Add(value);
+                if (onlyUniqueValue.Contains(value) == false)
+                    onlyUniqueValue.Add(value);
             }
         }
     }
